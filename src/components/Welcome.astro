@@ -1,5 +1,5 @@
 ---
-
+import ChipButton from "./ChipButton.astro"
 ---
 
 <div id="container">
@@ -20,6 +20,11 @@
         >my GitHub page</a
       > while you wait?
     </p>
+    <h2>Links</h2>
+    <div class="links">
+      <ChipButton as="a" href="https://github.com/MMK21Hub">GitHub</ChipButton>
+      <ChipButton as="a" href="https://blog.slevel.xyz">My blog</ChipButton>
+    </div>
   </main>
 </div>
 
@@ -44,6 +49,13 @@
     font-family: var(--font-heading);
     font-weight: 700;
     margin: 0;
+  }
+
+  h2 {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
   }
 
   .hero,
@@ -88,5 +100,11 @@
   }
   .my-name[data-index="2"] span:nth-child(3) {
     opacity: 1;
+  }
+
+  .links {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
   }
 </style>

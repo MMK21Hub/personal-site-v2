@@ -1,0 +1,32 @@
+---
+const { as: Element = "button", href = null } = Astro.props
+---
+
+<Element class="chip-button" href={href}>
+  <slot />
+</Element>
+
+<style>
+  .chip-button {
+    display: inline-flex;
+    height: 2rem;
+    padding-inline: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--ctp-latte-surface2);
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    /* color: inherit; */
+    color: hsl(var(--color-accent-300));
+  }
+
+  .chip-button:hover {
+    box-shadow: var(--elevation-1);
+  }
+
+  .chip-button:active,
+  .chip-button:focus-visible {
+    background-color: hsl(var(--ctp-latte-overlay1-hsl) / 0.1);
+  }
+</style>
